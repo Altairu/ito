@@ -88,8 +88,8 @@ if __name__ == "__main__":
     # パラメータ設定
     Np, Nd, Nt = 20, 20, 1000
     c1, c2 = 2.05, 2.05
-    w_const = 0.9
-    wMin, wMax = 0.4, 0.9
+    w_const = 0.75
+    wMin, wMax = 0.4, 0.75
     xMin, xMax = -5.12, 5.12
     vMin, vMax = 0.25*xMin, 0.25*xMax
     ITR = 10
@@ -101,18 +101,18 @@ if __name__ == "__main__":
 
     # 比較 DataFrame
     df = pd.DataFrame({
-        "kadai2 固定 w=0.9 平均": fixed_mean,
+        "kadai2 固定 w=0.75 平均": fixed_mean,
         "kadai5 LDIWM": ldiwm
     })
-    os.makedirs("比較結果", exist_ok=True)
-    df.to_csv("比較結果/kadai2_vs_kadai5.csv", index_label="世代")
+    os.makedirs("2-4比較結果", exist_ok=True)
+    df.to_csv("2-4比較結果/kadai2_vs_kadai5.csv", index_label="世代")
 
     # プロット
     plt.figure(figsize=(9,6))
     x = df.index.values
-    y1 = df["kadai2 固定 w=0.9 平均"].values
+    y1 = df["kadai2 固定 w=0.75 平均"].values
     y2 = df["kadai5 LDIWM"].values
-    plt.plot(x, y1, label="kadai2 固定 w=0.9")
+    plt.plot(x, y1, label="kadai2 固定 w=0.75")
     plt.plot(x, y2, label="kadai5 LDIWM")
     plt.xlabel("世代", size=14)
     plt.ylabel("最良評価値", size=14)
@@ -120,5 +120,5 @@ if __name__ == "__main__":
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig("比較結果/kadai2_vs_kadai5.png")
+    plt.savefig("2-4比較結果/kadai2_vs_kadai5.png")
     plt.show()
