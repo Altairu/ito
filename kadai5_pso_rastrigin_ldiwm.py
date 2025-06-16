@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import japanize_matplotlib
+import os
 
 # Rastrigin関数の定義
 def fitFunc1(xVals):
@@ -120,11 +121,10 @@ if __name__ == "__main__":
             xlim=(0, Nt),
             fontsize=14,
             figsize=(9, 6))
-    
-    import os
-    os.makedirs("実験4結果", exist_ok=True)
-    plt.savefig("実験4結果/kadai4_result_graph_fixed.png")
-    df.to_csv("実験4結果/kadai4_result_history_fixed.csv", index_label="世代")
+   
+    os.makedirs("実験5結果", exist_ok=True)
+    plt.savefig("実験5結果/kadai5_result_graph_fixed.png")
+    df.to_csv("実験5結果/kadai5_result_history_fixed.csv", index_label="世代")
 
     plt.xlabel('繰り返し回数', size=16)
     plt.ylabel('目的関数値', size=16)
