@@ -89,7 +89,7 @@ if __name__ == "__main__":
     Np, Nd, Nt = 20, 20, 1000
     c1, c2 = 2.05, 2.05
     w_const = 0.75
-    wMin, wMax = 0.4, 0.75
+    wMin, wMax = 0.4, 0.9
     xMin, xMax = -5.12, 5.12
     vMin, vMax = 0.25*xMin, 0.25*xMax
     ITR = 10
