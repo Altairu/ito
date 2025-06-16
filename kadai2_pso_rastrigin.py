@@ -119,6 +119,11 @@ if __name__ == "__main__":
             ylim=(1e-9, 1e6),
             fontsize=14,
             figsize=(9, 6))
+    
+    import os
+    os.makedirs("実験2結果", exist_ok=True)
+    plt.savefig("実験2結果/kadai2_result_graph_fixed.png")
+    df.to_csv("実験2結果/kadai2_result_history_fixed.csv", index_label="世代")
 
     plt.xlabel(xlabel='繰り返し回数', size=16)
     plt.ylabel(ylabel='目的関数値', size=16)
